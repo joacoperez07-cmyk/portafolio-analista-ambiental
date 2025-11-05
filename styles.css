@@ -1,0 +1,117 @@
+/* ----------------------------------------------------------------------- */
+/* 1. Estilos Globales: Fondo, Fuente y Reseteo */
+/* ----------------------------------------------------------------------- */
+
+/* Aplica el estilo oscuro al cuerpo de la página */
+body {
+    background-color: #1a1a1a; /* Negro muy oscuro, ideal para 'dark mode' */
+    color: #f0f0f0; /* Texto blanco suave */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente legible y moderna */
+    line-height: 1.6;
+    margin: 0; /* Elimina los márgenes del navegador */
+    padding: 0;
+}
+
+/* Estilo para todas las secciones */
+section {
+    padding: 80px 10%; /* Espacio interno, 80px arriba/abajo, 10% a los lados */
+    min-height: 100vh; /* Asegura que cada sección ocupe al menos la altura de la pantalla */
+    scroll-margin-top: 80px; /* Ayuda a que la navegación salte correctamente sin ocultarse bajo el menú fijo */
+}
+
+/* Encabezados y títulos */
+h1, h2, h3 {
+    color: #4CAF50; /* Un verde vibrante para tus títulos (asociado a "Ambiental") */
+    font-weight: 600;
+}
+h2 {
+    margin-bottom: 40px;
+    border-bottom: 2px solid #333; /* Una línea sutil debajo de los títulos de sección */
+    padding-bottom: 10px;
+}
+
+/* ----------------------------------------------------------------------- */
+/* 2. Estilos del Menú (Header) */
+/* ----------------------------------------------------------------------- */
+
+header {
+    background-color: #212121; /* Un color un poco más claro que el fondo para que destaque */
+    position: fixed; /* Mantiene el menú visible arriba, como en la imagen de referencia */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Asegura que el menú esté siempre sobre otros elementos */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Sombra sutil */
+}
+
+nav {
+    display: flex; /* Para poner los elementos en línea */
+    justify-content: space-between; /* Distribuye el espacio entre el logo y los enlaces */
+    align-items: center;
+    padding: 15px 10%;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.nav-links a {
+    color: #f0f0f0; /* Texto de los enlaces blanco */
+    text-decoration: none;
+    margin-left: 25px;
+    transition: color 0.3s; /* Animación suave al pasar el mouse */
+}
+
+.nav-links a:hover {
+    color: #4CAF50; /* El enlace se vuelve verde al pasar el mouse */
+}
+
+/* ----------------------------------------------------------------------- */
+/* 3. Estilos de la Sección de Inicio (Hero) */
+/* ----------------------------------------------------------------------- */
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* La altura min-height: 100vh en section ya lo centra */
+}
+
+.hero h1 {
+    font-size: 3em; /* Título grande */
+    margin: 10px 0;
+}
+
+.hero h2 {
+    font-size: 1.5em;
+    color: #f0f0f0; /* Título secundario blanco */
+    border: none; /* Quitamos la línea que pusimos abajo de los h2 genéricos */
+    margin-bottom: 20px;
+}
+
+.hero .greeting {
+    color: #ccc; /* Texto de saludo en gris */
+    font-size: 1.1em;
+}
+
+/* ----------------------------------------------------------------------- */
+/* 4. Estilos de Proyectos y Footer (Ejemplo) */
+/* ----------------------------------------------------------------------- */
+
+.project-card {
+    background-color: #212121;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #0d0d0d; /* Fondo del pie de página más oscuro */
+    color: #888;
+}
