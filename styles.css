@@ -115,3 +115,56 @@ footer {
     background-color: #0d0d0d; /* Fondo del pie de página más oscuro */
     color: #888;
 }
+/* ----------------------------------------------------------------------- */
+/* 5. Estilos de Diseño de Tarjetas (Grid Layout) */
+/* ----------------------------------------------------------------------- */
+
+/* Estilo para los contenedores de Habilidades y Proyectos (Grid) */
+.skills-container, .projects-grid {
+    display: grid;
+    /* Divide el espacio en columnas automáticas, adaptándose al tamaño de la pantalla */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px; /* Espacio entre las tarjetas */
+    margin-top: 40px;
+}
+
+/* Estilo para las tarjetas individuales de Proyecto/Habilidad (similar a las del video) */
+.skill-card, .project-card {
+    background-color: #212121; /* Fondo de tarjeta un poco más claro que el fondo principal */
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Efecto hover (al pasar el mouse) para darle interactividad */
+.skill-card:hover, .project-card:hover {
+    transform: translateY(-5px); /* Se levanta un poco */
+    box-shadow: 0 8px 15px rgba(76, 175, 80, 0.3); /* Sombra con el color verde principal */
+}
+
+/* Estilos internos de las tarjetas de proyecto */
+.project-card h3 {
+    color: #f0f0f0; /* Título del proyecto blanco */
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.project-card a {
+    display: inline-block;
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 10px 15px 0 0;
+    border: 1px solid #4CAF50;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.project-card a:hover {
+    background-color: #4CAF50;
+    color: #1a1a1a; /* Texto oscuro al pasar el mouse */
+}
