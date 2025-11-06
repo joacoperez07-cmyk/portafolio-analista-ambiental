@@ -168,3 +168,34 @@ footer {
     background-color: #4CAF50;
     color: #1a1a1a; /* Texto oscuro al pasar el mouse */
 }
+
+/* ----------------------------------------------------------------------- */
+/* 6. Animación de Fondo Fluido para la Sección de Inicio */
+/* ----------------------------------------------------------------------- */
+
+/* Definición de la animación: Mueve el gradiente */
+@keyframes fluid-background {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Aplicar el gradiente al cuerpo */
+.hero {
+    /* Gradiente sutil de colores oscuros con el toque verde */
+    background: linear-gradient(-45deg, #1a1a1a, #212121, #333333, #4CAF5011);
+    background-size: 400% 400%; /* Permite que el gradiente sea más grande que el contenedor */
+    animation: fluid-background 15s ease infinite; /* Aplica la animación */
+}
+
+/* Ajuste del color de la barra de navegación para que se vea bien */
+header {
+    background-color: rgba(33, 33, 33, 0.95); /* Semi-transparente para que la animación se filtre sutilmente */
+    backdrop-filter: blur(5px); /* Efecto de desenfoque, solo para navegadores modernos */
+}
