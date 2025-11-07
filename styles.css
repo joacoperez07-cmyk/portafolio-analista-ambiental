@@ -224,36 +224,29 @@ header {
 }
 
 /* ----------------------------------------------------------------------- */
-/* 8. Animación de Fondo Fluido para la Sección de Inicio (#hero) */
+/* 8. Animación de Fondo Fluido (Mayor Dinamismo) */
 /* ----------------------------------------------------------------------- */
 
 /* Definición de la animación: Mueve el gradiente */
 @keyframes fluid-background {
     0% {
-        background-position: 0% 50%;
+        background-position: 0% 0%; /* Inicia en la esquina superior izquierda */
     }
     50% {
-        background-position: 100% 50%;
+        background-position: 100% 100%; /* Mueve a la esquina inferior derecha */
     }
     100% {
-        background-position: 0% 50%;
+        background-position: 0% 0%;
     }
 }
 
-/* Aplicar el gradiente al cuerpo */
+/* Aplicar el gradiente al Hero */
 .hero {
-    /* Gradiente sutil de colores oscuros con el toque verde */
-    background: linear-gradient(-45deg, #1a1a1a, #212121, #333333, #4CAF5011);
-    background-size: 400% 400%; /* Permite que el gradiente sea más grande que el contenedor */
-    animation: fluid-background 15s ease infinite; /* Aplica la animación */
-}
-
-/* Ajuste del color del logo para el efecto de movimiento (opcional) */
-.logo-img {
-    color: #4CAF50; /* Color verde */
-    font-weight: bold;
-    letter-spacing: 1.5px;
-    font-size: 1.2em;
+    /* Gradiente con más contraste y el toque de verde ambiental */
+    background: linear-gradient(135deg, #121212, #242424, #1E8449, #4CAF50);
+    background-size: 500% 500%; /* Hacemos el gradiente más grande para un movimiento suave */
+    animation: fluid-background 20s ease infinite; /* Un poco más lento, pero con más rango de movimiento */
+    min-height: 100vh;
 }
 
 /* ----------------------------------------------------------------------- */
@@ -271,4 +264,22 @@ header {
     transform: translateY(-5px); /* Levanta la tarjeta 5px */
     box-shadow: 0 10px 20px rgba(76, 175, 80, 0.2); /* Sombra verde sutil (color de tu acento) */
     cursor: pointer;
+}
+
+/* ----------------------------------------------------------------------- */
+/* 10. Estilo del Logo */
+/* ----------------------------------------------------------------------- */
+
+nav a.logo {
+    font-size: 1.5em; /* Tamaño grande */
+    font-weight: 700;
+    color: #4CAF50; /* Color verde de acento */
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+/* Estilo para el ícono dentro del logo */
+.logo-img i {
+    margin-right: 8px; /* Espacio entre el ícono y el texto */
+    font-size: 1.2em; /* Ícono un poco más grande */
 }
