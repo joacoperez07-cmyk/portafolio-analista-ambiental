@@ -199,3 +199,26 @@ header {
     background-color: rgba(33, 33, 33, 0.95); /* Semi-transparente para que la animación se filtre sutilmente */
     backdrop-filter: blur(5px); /* Efecto de desenfoque, solo para navegadores modernos */
 }
+
+/* ----------------------------------------------------------------------- */
+/* 7. Ajustes de Diseño (Alineación y Header) */
+/* ----------------------------------------------------------------------- */
+
+/* Centrar el contenido del Hero y asegurar el fondo oscuro */
+.hero {
+    /* Asegura que el contenido (h1, h2, p) esté centrado */
+    text-align: center; 
+    /* Esta es la altura mínima. Dejamos el fondo animado para después */
+    min-height: 100vh; 
+    padding-top: 150px; /* Ajuste para evitar que el contenido quede bajo el header */
+}
+
+/* Header (Navegación) para hacerlo fijo y semi-transparente */
+header {
+    position: fixed; /* Mantiene la barra en su lugar al hacer scroll */
+    width: 100%;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    background-color: rgba(33, 33, 33, 0.95); /* Fondo oscuro semi-transparente */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    /* Nota: Volverá al diseño oscuro general porque el CSS está siendo cargado */
+}
