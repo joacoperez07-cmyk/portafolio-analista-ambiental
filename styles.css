@@ -222,3 +222,53 @@ header {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     /* Nota: Volverá al diseño oscuro general porque el CSS está siendo cargado */
 }
+
+/* ----------------------------------------------------------------------- */
+/* 8. Animación de Fondo Fluido para la Sección de Inicio (#hero) */
+/* ----------------------------------------------------------------------- */
+
+/* Definición de la animación: Mueve el gradiente */
+@keyframes fluid-background {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Aplicar el gradiente al cuerpo */
+.hero {
+    /* Gradiente sutil de colores oscuros con el toque verde */
+    background: linear-gradient(-45deg, #1a1a1a, #212121, #333333, #4CAF5011);
+    background-size: 400% 400%; /* Permite que el gradiente sea más grande que el contenedor */
+    animation: fluid-background 15s ease infinite; /* Aplica la animación */
+}
+
+/* Ajuste del color del logo para el efecto de movimiento (opcional) */
+.logo-img {
+    color: #4CAF50; /* Color verde */
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    font-size: 1.2em;
+}
+
+/* ----------------------------------------------------------------------- */
+/* 9. Efectos Interactivos (Hover en Tarjetas) */
+/* ----------------------------------------------------------------------- */
+
+/* Estilo de base para las tarjetas (si aún no existe) */
+.skill-card, .project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Define la transición suave */
+    /* Asegúrate que el background-color sea el gris oscuro que usamos antes (#212121) */
+}
+
+/* Efecto al pasar el mouse */
+.skill-card:hover, .project-card:hover {
+    transform: translateY(-5px); /* Levanta la tarjeta 5px */
+    box-shadow: 0 10px 20px rgba(76, 175, 80, 0.2); /* Sombra verde sutil (color de tu acento) */
+    cursor: pointer;
+}
