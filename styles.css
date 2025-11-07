@@ -326,22 +326,10 @@ h2 {
 }
 
 /* ----------------------------------------------------------------------- */
-/* 11. Simulación de Partículas Flotantes (Efecto WOW) */
+/* 11. Simulación de Partículas Flotantes (¡MÁS VISIBLE!) */
 /* ----------------------------------------------------------------------- */
 
-/* Contenedor de las partículas */
-.cubes {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    z-index: 1; /* Asegura que el contenido (hero-content) quede encima */
-}
+/* (Mantener el estilo .cubes y .hero-content igual) */
 
 /* Estilo base para cada partícula (el elemento <li>) */
 .cubes li {
@@ -350,23 +338,28 @@ h2 {
     list-style: none;
     width: 25px;
     height: 25px;
-    background: rgba(76, 175, 80, 0.2); /* Cubos semi-transparentes de tu color de acento */
+    /* Aumentamos la opacidad: de 0.2 a 0.5 */
+    background: rgba(76, 175, 80, 0.5); 
     animation: animate 25s linear infinite;
-    bottom: -150px; /* Inician fuera de la pantalla */
-    border-radius: 5px; /* Ligeramente redondeados para parecer cubos */
+    bottom: -150px; 
+    border-radius: 5px; 
+    border: 1px solid rgba(76, 175, 80, 0.8); /* Borde visible */
 }
 
-/* Posiciones y tamaños aleatorios para simular caos */
-.cubes li:nth-child(1) { left: 25%; width: 80px; height: 80px; animation-delay: 0s; animation-duration: 10s; background: rgba(76, 175, 80, 0.1); }
+/* Posiciones y tamaños aleatorios (añadimos más reglas para los 10 elementos) */
+.cubes li:nth-child(1) { left: 25%; width: 80px; height: 80px; animation-delay: 0s; animation-duration: 10s; background: rgba(76, 175, 80, 0.4); }
 .cubes li:nth-child(2) { left: 10%; width: 20px; height: 20px; animation-delay: 2s; animation-duration: 12s; }
 .cubes li:nth-child(3) { left: 70%; width: 20px; height: 20px; animation-delay: 4s; animation-duration: 20s; }
-.cubes li:nth-child(4) { left: 40%; width: 60px; height: 60px; animation-delay: 0s; animation-duration: 18s; background: rgba(76, 175, 80, 0.15); }
+.cubes li:nth-child(4) { left: 40%; width: 60px; height: 60px; animation-delay: 0s; animation-duration: 18s; background: rgba(76, 175, 80, 0.35); }
 .cubes li:nth-child(5) { left: 65%; width: 20px; height: 20px; animation-delay: 0s; animation-duration: 15s; }
-.cubes li:nth-child(6) { left: 75%; width: 110px; height: 110px; animation-delay: 3s; animation-duration: 11s; background: rgba(76, 175, 80, 0.25); }
+.cubes li:nth-child(6) { left: 75%; width: 110px; height: 110px; animation-delay: 3s; animation-duration: 11s; background: rgba(76, 175, 80, 0.55); }
 .cubes li:nth-child(7) { left: 35%; width: 150px; height: 150px; animation-delay: 7s; animation-duration: 25s; }
 .cubes li:nth-child(8) { left: 50%; width: 25px; height: 25px; animation-delay: 15s; animation-duration: 45s; }
+.cubes li:nth-child(9) { left: 85%; width: 45px; height: 45px; animation-delay: 6s; animation-duration: 14s; }
+.cubes li:nth-child(10) { left: 15%; width: 90px; height: 90px; animation-delay: 1s; animation-duration: 16s; background: rgba(76, 175, 80, 0.4); }
 
-/* Definición de la animación de movimiento */
+
+/* Definición de la animación de movimiento (Mantenemos esta igual) */
 @keyframes animate {
     0% {
         transform: translateY(0) rotate(0deg);
@@ -374,15 +367,8 @@ h2 {
         border-radius: 0;
     }
     100% {
-        transform: translateY(-1000px) rotate(720deg); /* Se mueve hacia arriba y rota */
+        transform: translateY(-1000px) rotate(720deg); 
         opacity: 0;
-        border-radius: 50%; /* Se convierte en un círculo al desaparecer */
+        border-radius: 50%;
     }
-}
-
-/* Asegurar que el contenido del hero esté encima de los cubos */
-.hero-content {
-    position: relative;
-    z-index: 2; 
-    text-align: center;
 }
