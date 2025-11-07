@@ -283,3 +283,106 @@ nav a.logo {
     margin-right: 8px; /* Espacio entre el ícono y el texto */
     font-size: 1.2em; /* Ícono un poco más grande */
 }
+
+/* ----------------------------------------------------------------------- */
+/* 10. Pulido General y Tipografía */
+/* ----------------------------------------------------------------------- */
+
+/* Ajuste General para todo el cuerpo */
+body {
+    /* Fuente más limpia y moderna (ej: una fuente sin serifa simple) */
+    font-family: 'Arial', sans-serif; 
+    line-height: 1.7; /* Aumenta el espaciado para mejor lectura */
+    color: #f0f0f0; /* Color de texto general más blanco */
+    background-color: #121212; /* Fondo base muy oscuro (previniendo bugs) */
+}
+
+/* Títulos H2 (Como Acerca de Mí, Proyectos) */
+h2 {
+    font-size: 2.2em;
+    padding-bottom: 10px; /* Espacio debajo del título */
+    border-bottom: 2px solid #333333; /* Línea de separación sutil */
+    margin-bottom: 30px;
+    color: #4CAF50; /* Títulos en verde para darle coherencia */
+}
+
+/* Ajuste de las tarjetas (Habilidades y Proyectos) */
+.skill-card, .project-card {
+    background-color: #1e1e1e; /* Fondo de tarjeta un poco más claro que el fondo */
+    border-radius: 12px; /* Bordes más redondeados */
+    padding: 30px;
+}
+
+/* Ajuste para el efecto de hover */
+.skill-card:hover, .project-card:hover {
+    transform: translateY(-8px); /* Levanta un poco más la tarjeta */
+    box-shadow: 0 15px 30px rgba(76, 175, 80, 0.3); /* Sombra más visible */
+}
+
+/* Remoción de decoración de lista de habilidades */
+.skill-card ul {
+    list-style: none; /* Quita los puntos de la lista */
+    padding-left: 0;
+}
+
+/* ----------------------------------------------------------------------- */
+/* 11. Simulación de Partículas Flotantes (Efecto WOW) */
+/* ----------------------------------------------------------------------- */
+
+/* Contenedor de las partículas */
+.cubes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    z-index: 1; /* Asegura que el contenido (hero-content) quede encima */
+}
+
+/* Estilo base para cada partícula (el elemento <li>) */
+.cubes li {
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 25px;
+    height: 25px;
+    background: rgba(76, 175, 80, 0.2); /* Cubos semi-transparentes de tu color de acento */
+    animation: animate 25s linear infinite;
+    bottom: -150px; /* Inician fuera de la pantalla */
+    border-radius: 5px; /* Ligeramente redondeados para parecer cubos */
+}
+
+/* Posiciones y tamaños aleatorios para simular caos */
+.cubes li:nth-child(1) { left: 25%; width: 80px; height: 80px; animation-delay: 0s; animation-duration: 10s; background: rgba(76, 175, 80, 0.1); }
+.cubes li:nth-child(2) { left: 10%; width: 20px; height: 20px; animation-delay: 2s; animation-duration: 12s; }
+.cubes li:nth-child(3) { left: 70%; width: 20px; height: 20px; animation-delay: 4s; animation-duration: 20s; }
+.cubes li:nth-child(4) { left: 40%; width: 60px; height: 60px; animation-delay: 0s; animation-duration: 18s; background: rgba(76, 175, 80, 0.15); }
+.cubes li:nth-child(5) { left: 65%; width: 20px; height: 20px; animation-delay: 0s; animation-duration: 15s; }
+.cubes li:nth-child(6) { left: 75%; width: 110px; height: 110px; animation-delay: 3s; animation-duration: 11s; background: rgba(76, 175, 80, 0.25); }
+.cubes li:nth-child(7) { left: 35%; width: 150px; height: 150px; animation-delay: 7s; animation-duration: 25s; }
+.cubes li:nth-child(8) { left: 50%; width: 25px; height: 25px; animation-delay: 15s; animation-duration: 45s; }
+
+/* Definición de la animación de movimiento */
+@keyframes animate {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+    100% {
+        transform: translateY(-1000px) rotate(720deg); /* Se mueve hacia arriba y rota */
+        opacity: 0;
+        border-radius: 50%; /* Se convierte en un círculo al desaparecer */
+    }
+}
+
+/* Asegurar que el contenido del hero esté encima de los cubos */
+.hero-content {
+    position: relative;
+    z-index: 2; 
+    text-align: center;
+}
